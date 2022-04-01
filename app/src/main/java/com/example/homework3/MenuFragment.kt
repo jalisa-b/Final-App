@@ -10,7 +10,7 @@ import androidx.navigation.Navigation
 
 
 class MenuFragment : Fragment() {
-    
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
