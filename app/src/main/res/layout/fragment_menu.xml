@@ -15,6 +15,7 @@
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:src="@drawable/beetle"
+        android:background="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/imageButton3"
         app:layout_constraintStart_toEndOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,6 +30,7 @@
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:src="@drawable/mosquito"
+        android:background="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/imageButton4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -43,6 +45,7 @@
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:src="@drawable/bee"
+        android:background="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/imageButton6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -90,6 +93,7 @@
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:src="@drawable/ant"
+        android:background="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton" />
 
@@ -102,6 +106,7 @@
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:src="@drawable/cricket"
+        android:background="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/imageButton8"
         app:layout_constraintEnd_toStartOf="@+id/imageButton6"
         app:layout_constraintHorizontal_bias="0.545"
@@ -117,6 +122,7 @@
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:src="@drawable/fly"
+        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton3" />
 
@@ -129,6 +135,7 @@
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:src="@drawable/mouse"
+        android:background="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
 
@@ -140,6 +147,7 @@
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:src="@drawable/wasp"
+        android:background="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/imageButton9"
         app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toEndOf="@+id/imageButton7"
@@ -154,6 +162,7 @@
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:src="@drawable/cockroach"
+        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton6" />
 
