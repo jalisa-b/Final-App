@@ -27,6 +27,9 @@
         <action
             android:id="@+id/action_menuFragment_to_tipsFragment"
             app:destination="@id/tipsFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_customizeFragment"
+            app:destination="@id/customizeFragment" />
     </fragment>
     <fragment
         android:id="@+id/tipsFragment"
@@ -35,6 +38,15 @@
         tools:layout="@layout/fragment_tips" >
         <action
             android:id="@+id/action_tipsFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/customizeFragment"
+        android:name="com.example.homework3.CustomizeFragment"
+        android:label="fragment_customize"
+        tools:layout="@layout/fragment_customize" >
+        <action
+            android:id="@+id/action_customizeFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
     </fragment>
 </navigation>

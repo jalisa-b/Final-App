@@ -10,21 +10,21 @@ import android.widget.ImageButton
 import androidx.navigation.Navigation
 
 
-class TipsFragment : Fragment() {
+class CustomizeFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_tips, container, false)
+        val view = inflater.inflate(R.layout.fragment_customize, container, false)
 
-        val returnToMain = view.findViewById<ImageButton>(R.id.returnToMain)
-        returnToMain.setOnClickListener{
-            Navigation.findNavController(view).navigate(R.id.action_tipsFragment_to_menuFragment)}
+        // navigate to main screen
+        val goToMain = view.findViewById<ImageButton>(R.id.goToMain)
+        goToMain.setOnClickListener{
+            Navigation.findNavController(view).navigate(R.id.action_customizeFragment_to_menuFragment)}
 
         return view
     }
-
 
 }

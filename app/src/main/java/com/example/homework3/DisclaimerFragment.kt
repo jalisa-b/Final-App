@@ -22,7 +22,7 @@ class DisclaimerFragment : Fragment() {
         val view =  inflater.inflate(R.layout.fragment_disclaimer, container, false)
 
 
-        val disclaimerText = view.findViewById<TextView>(R.id.disclaimer)
+        //val disclaimerText = view.findViewById<TextView>(R.id.disclaimer)
         val nextButton = view.findViewById<Button>(R.id.agree)
         nextButton.setOnClickListener{
             Navigation.findNavController(view).navigate(R.id.action_disclaimerFragment_to_menuFragment)}
