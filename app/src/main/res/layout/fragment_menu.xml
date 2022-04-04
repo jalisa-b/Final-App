@@ -21,11 +21,11 @@
         android:id="@+id/tipsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="128dp"
+        android:layout_marginBottom="132dp"
         android:text="Tips"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.839"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
@@ -48,5 +48,14 @@
         app:layout_constraintHorizontal_bias="0.255"
         app:layout_constraintStart_toEndOf="@+id/imageButton2"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/returnToDisclaimer"
+        android:layout_width="66dp"
+        android:layout_height="47dp"
+        android:backgroundTint="@color/purple_200"
+        android:src="?attr/homeAsUpIndicator"
+        tools:layout_editor_absoluteX="74dp"
+        tools:layout_editor_absoluteY="552dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

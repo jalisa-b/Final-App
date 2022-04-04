@@ -17,10 +17,14 @@ class MenuFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_menu, container, false)
+
         val tipsButton = view.findViewById<Button>(R.id.tipsButton)
         tipsButton.setOnClickListener{
             Navigation.findNavController(view).navigate(R.id.action_menuFragment_to_tipsFragment)}
 
+        val returnToDisclaimer = view.findViewById<Button>(R.id.returnToDisclaimer)
+        returnToDisclaimer.setOnClickListener{
+            Navigation.findNavController(view).navigate(R.id.action_menuFragment_to_disclaimerFragment)}
         return view
     }
 

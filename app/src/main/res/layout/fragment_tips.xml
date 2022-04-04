@@ -18,4 +18,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/returnToMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple_500"
+        android:rotationX="144"
+        android:src="?attr/actionModeCloseDrawable"
+        tools:layout_editor_absoluteX="189dp"
+        tools:layout_editor_absoluteY="629dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
