@@ -5,7 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/teal_700"
-    tools:context=".CustomizeFragment" >
+    android:visibility="visible"
+    tools:context=".CustomizeFragment"
+    tools:visibility="visible">
+
+    <TextView
+        android:id="@+id/custom"
+        android:layout_width="296dp"
+        android:layout_height="181dp"
+        android:text="@string/custom"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/toggleButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.633" />
 
     <ImageButton
         android:id="@+id/goToMain"
@@ -18,4 +35,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ToggleButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.slider.Slider
+        android:layout_width="297dp"
+        android:layout_height="32dp"
+        android:stepSize="2.0"
+        android:valueFrom="8.0"
+        android:valueTo="30.0"
+        app:layout_constraintBottom_toTopOf="@+id/goToMain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toggleButton" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
