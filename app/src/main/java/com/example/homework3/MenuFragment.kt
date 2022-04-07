@@ -4,6 +4,7 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
+import android.media.Image
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.Toast
 import androidx.navigation.Navigation
 
 
@@ -20,12 +23,51 @@ class MenuFragment : Fragment() {
     lateinit var returnToDisclaimer: ImageButton
     lateinit var goToCustom: ImageButton
 
+
+    val listPests = listOf("ant","bee","beetle", "cockroach", "cricket", "fly", "mosquito", "snake", "spider", "wasp")
+
+    lateinit var ant: ImageButton
+    lateinit var bee: ImageButton
+    lateinit var beetle: ImageButton
+    lateinit var cockroach: ImageButton
+    lateinit var cricket: ImageButton
+    lateinit var fly: ImageButton
+    lateinit var mosquito: ImageButton
+    lateinit var snake: ImageButton
+    lateinit var spider: ImageButton
+    lateinit var wasp: ImageButton
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_menu, container, false)
+
+        ant = view.findViewById(R.id.ant)
+        bee = view.findViewById(R.id.bee)
+        beetle = view.findViewById(R.id.beetle)
+        cockroach = view.findViewById(R.id.cockroach)
+        cricket = view.findViewById(R.id.cricket)
+        fly = view.findViewById(R.id.fly)
+        mosquito = view.findViewById(R.id.mosquito)
+        snake = view.findViewById(R.id.snake)
+        spider = view.findViewById(R.id.spider)
+        wasp = view.findViewById(R.id.wasp)
+
+         var  listPestButtons = listOf(ant, bee, beetle, cockroach, cricket, fly, mosquito, snake, spider, wasp)
+
+
+
+        listPestButtons.forEach{
+            it.setOnClickListener {
+                //val toast = Toast.makeText(this,"Clicked $it",Toast.LENGTH_LONG)
+                //toast.show()
+                    it.setBackgroundColor(getResources().getColor(R.color.green))
+            }
+        }
+
+
 
         // navigating to tips page
         tipsButton = view.findViewById<Button>(R.id.tipsButton)

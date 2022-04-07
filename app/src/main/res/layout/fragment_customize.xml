@@ -13,34 +13,39 @@
         android:id="@+id/custom"
         android:layout_width="296dp"
         android:layout_height="181dp"
+        android:fontFamily="@font/average_sans"
         android:text="@string/custom"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/purple_500"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/toggleButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.633" />
+        app:layout_constraintVertical_bias="0.658" />
 
     <ImageButton
         android:id="@+id/goToMain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="152dp"
-        android:backgroundTint="@color/purple_500"
+        android:layout_width="85dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="172dp"
+        android:backgroundTint="@color/blue"
         android:src="?attr/actionModeCloseDrawable"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ToggleButton
         android:id="@+id/toggleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:alpha=".7"
+        android:background="@color/purple_200"
+        android:fontFamily="sans-serif-medium"
         android:text="ToggleButton"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,6 +60,10 @@
         app:layout_constraintBottom_toTopOf="@+id/goToMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toggleButton" />
+        app:layout_constraintTop_toBottomOf="@+id/toggleButton"
+        app:thumbColor="@color/purple_500"
+        app:tickColorInactive="@color/purple_200"
+        app:trackColorActive="@color/purple_500"
+        app:trackColorInactive="@color/purple_200" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
