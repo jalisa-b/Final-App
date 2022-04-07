@@ -4,30 +4,132 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
+    android:background="@color/green_light"
     tools:context=".DisclaimerFragment">
 
+
     <TextView
-        android:id="@+id/disclaimer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/allerta"
-        android:text="disclaimer text"
+        android:id="@+id/question1"
+        android:layout_width="280dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="96dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Are the sounds emitted by this app harmful to household pets?"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@color/purple_700"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/answer2"
+        android:layout_width="278dp"
+        android:layout_height="130dp"
+        android:fontFamily="@font/average_sans"
+        android:text="We do NOT recommend using this app if you own rodents like rats, mice, guinea pigs, hamsters, and gerbils. This app emits sounds above 200,000 Hz. Rodents like rats, mice, guinea pigs, hamsters, and gerbils can hear sounds up to 90,000 Hz, cats up  to 60,000 Hz, and dogs up to 40,000 Hz. (For reference, humans hear up to 20,000 Hz.) If you live in a small apartment or duplex, we recommend checking in with your neighbors before using this app."
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@color/purple_700"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/question2" />
+
+    <TextView
+        android:id="@+id/question2"
+        android:layout_width="280dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="How do ultrasonic pest repellers work?"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@color/purple_700"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answer1" />
+
+    <TextView
+        android:id="@+id/answer1"
+        android:layout_width="280dp"
+        android:layout_height="105dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/average_sans"
+        android:text="Ultrasonic pest repellers emit high-frequency sound waves inaudible to humans. These sounds are extremely irritating to cockroaches, beetles, mice, mosquitos, and other disagreeable pests. While these sounds will not kill anything, they will make it insufferable for these pests to be within hearing distance, making them more likely to flee or refrain from nesting near the sound’s source (your phone)."
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@color/purple_700"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/question1" />
+
+    <TextView
+        android:id="@+id/question3"
+        android:layout_width="280dp"
+        android:layout_height="20dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Is this app a viable replacement to pest control?"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@color/purple_700"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answer2" />
+
+    <TextView
+        android:id="@+id/answer3"
+        android:layout_width="280dp"
+        android:layout_height="94dp"
+        android:fontFamily="@font/average_sans"
+        android:text="There are many downsides to more extreme measures of pest control. The cost can run high. Poison can be harmful to children, pregnant and nursing women, and animals. That being said, if you have a real infestation in your hand that is degrading your quality of life, you should contact your local pest control."
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@color/purple_700"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/question3"/>
+
+    <TextView
+        android:id="@+id/question4"
+        android:layout_width="277dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Is ultrasonic pest repellent technology backed by science?"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@color/purple_700"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answer3" />
+
+    <TextView
+        android:id="@+id/answer4"
+        android:layout_width="283dp"
+        android:layout_height="28dp"
+        android:fontFamily="@font/average_sans"
+        android:text="As of now, no. The studies on it are far and few."
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@color/purple_700"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/question4"/>
 
     <Button
         android:id="@+id/agree"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Agree"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/disclaimer" />
+        app:layout_constraintTop_toBottomOf="@+id/answer4"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

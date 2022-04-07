@@ -4,166 +4,193 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_700"
+    android:background="@color/green_light"
     tools:context=".MenuFragment">
 
     <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="121dp"
-        android:layout_height="108dp"
-        android:layout_marginTop="108dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:src="@drawable/beetle"
-        android:background="@color/white"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton3"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="104dp"
-        android:layout_height="104dp"
-        android:layout_marginStart="16dp"
+        android:id="@+id/mosquito"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="108dp"
         android:layout_marginBottom="28dp"
         android:adjustViewBounds="true"
+        android:background="@color/green_light"
+        android:contentDescription="Clickable picture of a mosquito"
         android:scaleType="fitCenter"
         android:src="@drawable/mosquito"
-        android:background="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton4"
+        app:layout_constraintBottom_toTopOf="@+id/ant"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="100dp"
-        android:layout_height="104dp"
+        android:id="@+id/cockroach"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_marginTop="108dp"
-        android:layout_marginEnd="16dp"
+        android:adjustViewBounds="true"
+        android:background="@color/green_light"
+        android:contentDescription="Clickable picture of a cockroach"
+        android:scaleType="fitCenter"
+        android:src="@drawable/cockroach"
+        app:layout_constraintEnd_toStartOf="@+id/bee"
+        app:layout_constraintStart_toEndOf="@+id/mosquito"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/bee"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="48dp"
         android:layout_marginBottom="28dp"
         android:adjustViewBounds="true"
+        android:background="@color/green_light"
         android:scaleType="fitCenter"
         android:src="@drawable/bee"
-        android:background="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton6"
+        app:layout_constraintBottom_toTopOf="@+id/fly"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="Clickable picture of a bee" />
+
+    <ImageButton
+        android:id="@+id/ant"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="20dp"
+        android:adjustViewBounds="true"
+        android:background="@color/green_light"
+        android:contentDescription="Clickable picture of a ant"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ant"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mosquito" />
+
+    <ImageButton
+        android:id="@+id/cricket"
+        android:layout_width="97dp"
+        android:layout_height="86dp"
+        android:layout_marginTop="28dp"
+        android:adjustViewBounds="true"
+        android:background="@color/green_light"
+        android:contentDescription="Clickable picture of a cricket"
+        android:scaleType="fitCenter"
+        android:src="@drawable/cricket"
+        app:layout_constraintBottom_toTopOf="@+id/wasp"
+        app:layout_constraintEnd_toStartOf="@+id/fly"
+        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintStart_toEndOf="@+id/ant"
+        app:layout_constraintTop_toBottomOf="@+id/cockroach" />
+
+    <ImageButton
+        android:id="@+id/fly"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="44dp"
+        android:adjustViewBounds="true"
+        android:background="@color/green_light"
+        android:contentDescription="Clickable picture of a fly"
+        android:scaleType="fitCenter"
+        android:src="@drawable/fly"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bee" />
+
+    <ImageButton
+        android:id="@+id/snake"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="24dp"
+        android:adjustViewBounds="true"
+        android:background="@color/green_light"
+        android:scaleType="fitCenter"
+        android:src="@drawable/snake"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ant"
+        android:contentDescription="Clickable picture of a snake" />
+
+    <ImageButton
+        android:id="@+id/wasp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="20dp"
+        android:adjustViewBounds="true"
+        android:background="@color/green_light"
+        android:contentDescription="Clickable picture of a wasp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/wasp"
+        app:layout_constraintEnd_toStartOf="@+id/beetle"
+        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintStart_toEndOf="@+id/snake"
+        app:layout_constraintTop_toBottomOf="@+id/cricket" />
+
+    <ImageButton
+        android:id="@+id/beetle"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="44dp"
+        android:adjustViewBounds="true"
+        android:background="@color/green_light"
+        android:contentDescription="Clickable picture of a beetle"
+        android:scaleType="fitCenter"
+        android:src="@drawable/beetle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fly" />
+
+    <ImageButton
+        android:id="@+id/spider"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/green_light"
+        android:contentDescription="Clickable picture of a beetle"
+        android:scaleType="fitCenter"
+        android:src="@drawable/spider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/snake" />
 
     <ImageButton
         android:id="@+id/goToCustom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="144dp"
-        android:backgroundTint="@color/teal_700"
+        android:layout_width="85dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/green"
         android:src="@android:drawable/ic_menu_add"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tipsButton" />
+        app:layout_constraintStart_toEndOf="@+id/spider"
+        app:layout_constraintTop_toBottomOf="@+id/beetle" />
 
     <ImageButton
         android:id="@+id/returnToDisclaimer"
-        android:layout_width="63dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="144dp"
-        android:backgroundTint="@color/purple_200"
+        android:layout_width="77dp"
+        android:layout_height="73dp"
+        android:layout_marginBottom="104dp"
+        android:backgroundTint="@color/blue"
         android:src="?attr/actionModeCloseDrawable"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/goToCustom"
-        app:layout_constraintHorizontal_bias="0.733"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.297"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spider"
+        app:layout_constraintVertical_bias="0.269" />
 
     <Button
         android:id="@+id/tipsButton"
-        android:layout_width="72dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="76dp"
-        android:layout_marginBottom="148dp"
-        android:backgroundTint="@color/purple_200"
+        android:layout_width="79dp"
+        android:layout_height="68dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="108dp"
+        android:backgroundTint="@color/blue"
         android:text="Tips"
+        android:textColor="@color/purple_700"
+        app:iconTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="103dp"
-        android:layout_height="112dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:src="@drawable/ant"
-        android:background="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
-
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="118dp"
-        android:layout_height="112dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginBottom="28dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:src="@drawable/cricket"
-        android:background="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton8"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton6"
-        app:layout_constraintHorizontal_bias="0.545"
-        app:layout_constraintStart_toEndOf="@+id/imageButton4"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
-
-    <ImageButton
-        android:id="@+id/imageButton6"
-        android:layout_width="117dp"
-        android:layout_height="112dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:src="@drawable/fly"
-        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton3" />
+        app:layout_constraintTop_toBottomOf="@+id/goToCustom" />
 
-    <ImageButton
-        android:id="@+id/imageButton7"
-        android:layout_width="105dp"
-        android:layout_height="102dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="28dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:src="@drawable/mouse"
-        android:background="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
-
-    <ImageButton
-        android:id="@+id/imageButton8"
-        android:layout_width="119dp"
-        android:layout_height="103dp"
-        android:layout_marginTop="28dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:src="@drawable/wasp"
-        android:background="@color/white"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton9"
-        app:layout_constraintHorizontal_bias="0.467"
-        app:layout_constraintStart_toEndOf="@+id/imageButton7"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton5" />
-
-    <ImageButton
-        android:id="@+id/imageButton9"
-        android:layout_width="115dp"
-        android:layout_height="106dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="8dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:src="@drawable/cockroach"
-        android:background="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
