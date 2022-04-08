@@ -42,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:alpha=".7"
-        android:background="@color/purple_200"
+        android:background="@color/green"
         android:fontFamily="sans-serif-medium"
         android:text="ToggleButton"
         android:textStyle="bold"
@@ -64,6 +64,6 @@
         app:thumbColor="@color/purple_500"
         app:tickColorInactive="@color/purple_200"
         app:trackColorActive="@color/purple_500"
-        app:trackColorInactive="@color/purple_200" />
+        app:trackColorInactive="@color/green" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
