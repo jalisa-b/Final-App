@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.Toast
 import android.widget.ToggleButton
 import androidx.appcompat.widget.AppCompatImageButton
 import androidx.fragment.app.Fragment
@@ -24,7 +25,7 @@ class MenuFragment : Fragment() {
     lateinit var goToCustom: ImageButton
 
 
-    var listPests = listOf("ant","bee","beetle", "cockroach", "cricket", "fly", "mosquito", "snake", "spider", "wasp")
+    var listPests = listOf("ants","bees","beetles", "cockroaches", "crickets", "flies", "mosquitos", "snakes", "spiders", "wasps")
     var  listClicks = mutableListOf<Int>()
 
     lateinit var ant: ImageButton
@@ -64,10 +65,10 @@ class MenuFragment : Fragment() {
 
         for (i in listPestButtons.indices){
             var pest = listPestButtons[i]
+            var pestString = listPests[i]
             var numClicks = listClicks[i]
             pest.setOnClickListener {
-                //val toast = Toast.makeText(this,"Clicked $it",Toast.LENGTH_LONG)
-                //toast.show()
+                val toast = Toast.makeText(activity,"Playing sound to repel $pestString!",Toast.LENGTH_SHORT).show()
                 if (numClicks %2 == 0 ) {
                     it.setBackgroundResource(R.color.green_select)
                 } else {
