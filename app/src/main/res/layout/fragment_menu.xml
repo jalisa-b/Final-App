@@ -61,7 +61,7 @@
         android:scaleType="fitCenter"
         android:src="@drawable/fly"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/beeText" />
 
     <ImageButton
         android:id="@+id/ant"
@@ -75,7 +75,7 @@
         android:scaleType="fitCenter"
         android:src="@drawable/ant"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/mosquitoText" />
 
     <ImageButton
         android:id="@+id/cricket"
@@ -90,7 +90,7 @@
         app:layout_constraintEnd_toStartOf="@+id/fly"
         app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toEndOf="@+id/ant"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/cockroachText" />
 
     <ImageButton
         android:id="@+id/beetle"
@@ -104,7 +104,7 @@
         android:scaleType="fitCenter"
         android:src="@drawable/beetle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/flyText" />
 
     <ImageButton
         android:id="@+id/spider"
@@ -117,7 +117,7 @@
         android:scaleType="fitCenter"
         android:src="@drawable/spider"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/snakeText" />
 
     <ImageButton
         android:id="@+id/snake"
@@ -131,7 +131,7 @@
         android:scaleType="fitCenter"
         android:src="@drawable/snake"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/antText" />
 
     <ImageButton
         android:id="@+id/wasp"
@@ -145,7 +145,7 @@
         android:src="@drawable/wasp"
         app:layout_constraintEnd_toStartOf="@+id/beetle"
         app:layout_constraintStart_toEndOf="@+id/snake"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/cricketText" />
 
     <ImageButton
         android:id="@+id/goToCustom"
@@ -157,7 +157,7 @@
         android:backgroundTint="@color/green"
         android:src="@android:drawable/ic_menu_add"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/beetleText"
         app:tint="@color/black" />
 
     <ImageButton
@@ -171,7 +171,7 @@
         android:src="?attr/actionModeCloseDrawable"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/spiderText" />
 
     <Button
         android:id="@+id/tipsButton"
@@ -186,139 +186,150 @@
         app:iconTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/customText" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/mosquitoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="4dp"
         android:text="MOSQUITO"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mosquito" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/cockroachText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="4dp"
         android:text="COCKROACH"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/mosquitoText"
         app:layout_constraintTop_toBottomOf="@+id/cockroach" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/beeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="4dp"
         android:text="BEE"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.035"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/cockroachText"
         app:layout_constraintTop_toBottomOf="@+id/bee" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/antText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginTop="4dp"
         android:text="ANT"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ant" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/cricketText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginTop="4dp"
         android:text="CRICKET"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toEndOf="@+id/antText"
         app:layout_constraintTop_toBottomOf="@+id/cricket" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/flyText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="4dp"
         android:text="FLY"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.221"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintStart_toEndOf="@+id/cricketText"
         app:layout_constraintTop_toBottomOf="@+id/fly" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/snakeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginTop="4dp"
         android:text="SNAKE"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/snake" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/waspText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
         android:layout_marginTop="4dp"
         android:text="WASP"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintStart_toEndOf="@+id/snakeText"
         app:layout_constraintTop_toBottomOf="@+id/wasp" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/beetleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginTop="4dp"
         android:text="BEETLE"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintStart_toEndOf="@+id/waspText"
         app:layout_constraintTop_toBottomOf="@+id/beetle" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/spiderText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
         android:layout_marginTop="4dp"
         android:text="SPIDER"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spider" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/customText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="55dp"
         android:text="CUSTOM"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
