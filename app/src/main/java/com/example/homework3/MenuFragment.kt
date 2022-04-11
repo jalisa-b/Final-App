@@ -4,16 +4,16 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
-import android.media.Image
+import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.ToggleButton
+import androidx.appcompat.widget.AppCompatImageButton
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 
 
@@ -24,7 +24,8 @@ class MenuFragment : Fragment() {
     lateinit var goToCustom: ImageButton
 
 
-    val listPests = listOf("ant","bee","beetle", "cockroach", "cricket", "fly", "mosquito", "snake", "spider", "wasp")
+    var listPests = listOf("ant","bee","beetle", "cockroach", "cricket", "fly", "mosquito", "snake", "spider", "wasp")
+    var  listClicks = mutableListOf<Int>()
 
     lateinit var ant: ImageButton
     lateinit var bee: ImageButton
@@ -36,6 +37,8 @@ class MenuFragment : Fragment() {
     lateinit var snake: ImageButton
     lateinit var spider: ImageButton
     lateinit var wasp: ImageButton
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,17 +58,30 @@ class MenuFragment : Fragment() {
         spider = view.findViewById(R.id.spider)
         wasp = view.findViewById(R.id.wasp)
 
-         var  listPestButtons = listOf(ant, bee, beetle, cockroach, cricket, fly, mosquito, snake, spider, wasp)
+        var  listPestButtons = listOf(ant, bee, beetle, cockroach, cricket, fly, mosquito, snake, spider, wasp)
+        for (pest in listPestButtons){
+            listClicks.add(0) }
 
-
-
-        listPestButtons.forEach{
-            it.setOnClickListener {
+        for (i in listPestButtons.indices){
+            var pest = listPestButtons[i]
+            var numClicks = listClicks[i]
+            pest.setOnClickListener {
                 //val toast = Toast.makeText(this,"Clicked $it",Toast.LENGTH_LONG)
                 //toast.show()
-                    it.setBackgroundColor(getResources().getColor(R.color.green))
+                if (numClicks %2 == 0 ) {
+                    it.setBackgroundResource(R.color.green_select)
+                } else {
+                    it.setBackgroundResource(R.color.green_light)
+                }
+                numClicks += 1
+                listClicks.set(i,numClicks)
             }
+
         }
+
+
+
+
 
 
 
