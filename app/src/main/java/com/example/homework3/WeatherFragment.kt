@@ -2,7 +2,6 @@ package com.example.homework3
 
 import android.Manifest
 import android.content.Context
-import android.content.Context.LOCATION_SERVICE
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationListener
@@ -16,25 +15,20 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
 import com.android.volley.Request
 import com.android.volley.RequestQueue
-import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
-import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.google.android.gms.location.FusedLocationProviderClient
 import org.json.JSONException
-import org.json.JSONObject
 
 class WeatherFragment : Fragment(), LocationListener {
     private lateinit var locationManager: LocationManager
-    private lateinit var tvGpsLocation: TextView
+    private lateinit var tempText: TextView
+    private lateinit var cityText: TextView
+    private lateinit var descriptionText: TextView
     private val locationPermissionCode = 2
 
     //weather url to get JSON
@@ -49,10 +43,14 @@ class WeatherFragment : Fragment(), LocationListener {
         val view =  inflater.inflate(R.layout.fragment_weather, container, false)
 
 
+        tempText = view.findViewById<TextView>(R.id.temperature)
+        cityText = view.findViewById<TextView>(R.id.city)
+        descriptionText = view.findViewById<TextView>(R.id.description)
+
         //link the textView in which the temperature will be displayed
-        val button: Button = view.findViewById(R.id.getLocation)
+        val button: Button = view.findViewById(R.id.updateWeather)
         requestQueue = Volley.newRequestQueue(view.context)
-        button.setOnClickListener {
+       // button.setClickListener {
             //locationManager = getSystemService(context.LOCATION_SERVICE) as LocationManager
             locationManager = view.context.getSystemService(Context.LOCATION_SERVICE) as LocationManager
             if ((ContextCompat.checkSelfPermission(view.context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)) {
@@ -60,15 +58,14 @@ class WeatherFragment : Fragment(), LocationListener {
             }
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 5f, this)
 
-        }
+        //}
 
             return view
     }
 
 
     override fun onLocationChanged(location: Location) {
-        tvGpsLocation = requireView().findViewById<TextView>(R.id.textView)
-        tvGpsLocation.text = "Latitude: " + location.latitude + " , Longitude: " + location.longitude
+        //tempText.text = "Latitude: " + location.latitude + " , Longitude: " + location.longitude
         getTemperature(location.latitude, location.longitude)
     }
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
@@ -91,11 +88,26 @@ class WeatherFragment : Fragment(), LocationListener {
                     val jsonArray = response.getJSONArray("data")
 
                     val info = jsonArray.getJSONObject(0)
-                    val temp = info.getInt("temp")
-                    val city = info.getString("timezone").filterNot { it == '/' }
-                tvGpsLocation.text= "temperature: $temp city: $city"
-
-
+                    var temp = info.getDouble("temp")
+                    val cityname = info.getString("city_name")
+                    val statecode = info.getString("state_code")
+                    val countrycode = info.getString("country_code")
+                    val description = info.getJSONObject("weather").getString("description")
+            /*
+                    var timezone = info.getString("timezone")
+                    val index1 = timezone.lastIndexOf('/')
+                    timezone = timezone.substring(index1+1)
+                    val index2 = timezone.lastIndexOf('_')
+                    val sb = StringBuilder(timezone).also { it.setCharAt(index2, ' ') }
+                    val city = sb.toString()*/
+            if (countrycode.equals("US")){
+                temp = temp*(9/5) + 32
+                tempText.text= "$temp\u2109"
+            } else{
+                tempText.text= "$temp\u2103"
+            }
+            cityText.text = "$cityname, $statecode, $countrycode"
+            descriptionText.text = "$description"
 
         } catch (e: JSONException) {
             e.printStackTrace()

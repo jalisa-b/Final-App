@@ -7,41 +7,64 @@
     android:background="@color/blue"
     tools:context=".WeatherFragment">
 
-    <!-- TODO: Update blank fragment layout -->
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="4dp"
-        tools:context=".MainActivity"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:padding="16sp">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/temperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="Current GPS Location"
-            android:textColor="@color/green_dark"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="250dp"
+            android:fontFamily="@font/average_sans"
+            android:text=""
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="200dp"
+            android:fontFamily="@font/average_sans"
+            android:text=""
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="400dp"
+            android:fontFamily="@font/average_sans"
+            android:text=""
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/black"
+            android:textSize="32sp" />
 
         <Button
-            android:id="@+id/getLocation"
-            android:layout_width="249dp"
-            android:layout_height="78dp"
-            android:layout_above="@+id/textView"
+            android:id="@+id/updateWeather"
+            android:layout_width="125dp"
+            android:layout_height="73dp"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="106dp"
-            android:layout_marginTop="213dp"
-            android:layout_marginEnd="108dp"
-            android:layout_marginBottom="82dp"
-            android:background="@color/green_light"
-            android:text="Get location"
-            android:textColor="@color/purple_700" />
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="165dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="168dp"
+            android:layout_marginBottom="570dp"
+            android:text="Parse JSON" />
     </RelativeLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
