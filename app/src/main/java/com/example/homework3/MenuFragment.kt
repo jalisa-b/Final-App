@@ -23,6 +23,7 @@ class MenuFragment : Fragment() {
     lateinit var tipsButton: Button
     lateinit var returnToDisclaimer: ImageButton
     lateinit var goToCustom: ImageButton
+    lateinit var goToWeather: Button
 
 
     var listPests = listOf("ants","bees","beetles", "cockroaches", "crickets", "flies", "mosquitos", "snakes", "spiders", "wasps")
@@ -104,6 +105,12 @@ class MenuFragment : Fragment() {
                 .navigate(R.id.action_menuFragment_to_customizeFragment)
         }
 
+        goToWeather = view.findViewById<Button>(R.id.goToWeather)
+        goToWeather.setOnClickListener {
+            scaler()
+            Navigation.findNavController(view)
+                .navigate(R.id.action_menuFragment_to_weatherFragment)
+        }
         return view
     }
 
