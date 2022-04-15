@@ -8,6 +8,7 @@ import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,12 +22,26 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import com.android.volley.Request
+import com.android.volley.RequestQueue
+import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
+import com.google.android.gms.location.FusedLocationProviderClient
+import org.json.JSONException
+import org.json.JSONObject
 
 class WeatherFragment : Fragment(), LocationListener {
     private lateinit var locationManager: LocationManager
     private lateinit var tvGpsLocation: TextView
     private val locationPermissionCode = 2
 
+    //weather url to get JSON
+    var weather_url1 = ""
+    //api id for url
+    var api_id1 = "eb1fbbe5a02240e7a29493eede818b43"
+    private var requestQueue: RequestQueue? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,6 +51,7 @@ class WeatherFragment : Fragment(), LocationListener {
 
         //link the textView in which the temperature will be displayed
         val button: Button = view.findViewById(R.id.getLocation)
+        requestQueue = Volley.newRequestQueue(view.context)
         button.setOnClickListener {
             //locationManager = getSystemService(context.LOCATION_SERVICE) as LocationManager
             locationManager = view.context.getSystemService(Context.LOCATION_SERVICE) as LocationManager
@@ -43,6 +59,7 @@ class WeatherFragment : Fragment(), LocationListener {
                 ActivityCompat.requestPermissions(requireActivity(), arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), locationPermissionCode)
             }
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 5f, this)
+
         }
 
             return view
@@ -52,6 +69,7 @@ class WeatherFragment : Fragment(), LocationListener {
     override fun onLocationChanged(location: Location) {
         tvGpsLocation = requireView().findViewById<TextView>(R.id.textView)
         tvGpsLocation.text = "Latitude: " + location.latitude + " , Longitude: " + location.longitude
+        getTemperature(location.latitude, location.longitude)
     }
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
@@ -64,82 +82,50 @@ class WeatherFragment : Fragment(), LocationListener {
             }
         }
     }
-}
+    fun getTemperature( latitude: Double, longitude: Double) {
+        //https://riis.com/blog/sending-requests-using-android-volley/
+        val url = "https://api.weatherbit.io/v2.0/current?" + "lat=" + latitude +"&lon="+ longitude + "&key="+ api_id1
+        Log.e("lat", url)
+        val request = JsonObjectRequest(Request.Method.GET, url, null, {
+                response ->try {
+                    val jsonArray = response.getJSONArray("data")
 
-/*
-    //weather url to get JSON
-    var weather_url1 = ""
-    //api id for url
-    var api_id1 = "eb1fbbe5a02240e7a29493eede818b43"
-    private lateinit var textView: TextView
-    private lateinit var refreshButton: Button
-    private lateinit var fusedLocationClient: FusedLocationProviderClient
+                    val info = jsonArray.getJSONObject(0)
+                    val temp = info.getInt("temp")
+                    val city = info.getString("timezone").filterNot { it == '/' }
+                tvGpsLocation.text= "temperature: $temp city: $city"
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view =  inflater.inflate(R.layout.fragment_weather, container, false)
 
-        //link the textView in which the temperature will be displayed
-        textView = view.findViewById<TextView>(R.id.textView)
-        refreshButton = view.findViewById<Button>(R.id.refresh)
-        //create an instance of the Fused Location Provider Client
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient(view.context)
-        //Log.e("lat", weather_url1)
-        //on clicking this button function to get the coordinates will be called
-        refreshButton.setOnClickListener {
-            //Log.e("lat", "onClick")
-            //textView.text = "updating now"
-            //function to find the coordinates of the last location
-            obtainLocation()
-            getTemperature()
+        } catch (e: JSONException) {
+            e.printStackTrace()
         }
-
-        // Inflate the layout for this fragment
-        return view
-
+        }, { error -> error.printStackTrace() })
+        requestQueue?.add(request)
 
     }
-    @SuppressLint("MissingPermission")
-    private fun obtainLocation(){
-        //Log.e("lat", "function")
-        //get the last location
-        fusedLocationClient.lastLocation
-            .addOnSuccessListener { location: Location? ->
-                //get the latitute and longitude and create the http URL
-               //weather_url1 = "https://api.weatherbit.io/v2.0/current?" + "lat=" + location?.latitude +"&lon="+ location?.longitude + "&key="+ api_id1
-                //weather_url1 = "https://api.weatherbit.io/v2.0/current?lat=35.7796&lon=-78.6382&key=API_KEY&include=minutely"
-
-                textView.text = "updating now"
-                //textView.text = "$location"
-                //Log.e("lat", weather_url1.toString())
-                //this function will fetch data from URL
-                getTemperature() //make a request form this URL to get data
-            }
-    }
-
-    fun getTemperature() {
+    /*
+    fun getTemperature( latitude: Double, longitude: Double) {
         //https://riis.com/blog/sending-requests-using-android-volley/
 
         // Instantiate the RequestQueue.
-        val queue = Volley.newRequestQueue(activity?.applicationContext)
-        weather_url1 = "https://api.weatherbit.io/v2.0/current?" + "lat=" + "35.7796" +"&lon="+ "-78.6382" + "&key="+ api_id1
+        var queue = Volley.newRequestQueue(context)
+        weather_url1 = "https://api.weatherbit.io/v2.0/current?" + "lat=" + latitude +"&lon="+ longitude + "&key="+ api_id1
 
         val url: String = weather_url1
-        //Log.e("lat", url)
+        Log.e("lat", url)
         // Request a string response
         // from the provided URL.
-        val stringReq = StringRequest(Request.Method.GET, url, Response.Listener
+        val stringReq = StringRequest(Request.Method.GET, url, Response.Listener<String>
             { response ->
-                //Log.e("lat", response.toString())
+                var strResp = response.toString()
+                Log.e("lat", response.toString())
 
                 // get the JSON object
                 val obj = JSONObject(response)
-                textView.text = obj.toString()
+
                 // get the Array from obj of name - "data"
-                //val arr = obj.getJSONArray("data")
+                // val arr = obj.getJSONArray("data")
                 //Log.e("lat obj1", arr.toString())
 
                 // get the JSON object from the
@@ -149,13 +135,12 @@ class WeatherFragment : Fragment(), LocationListener {
 
                 // set the temperature and the city
                 // name using getString() function
-                //textView.text = obj2.getString("temp") + " deg Celsius in " + obj2.getString("city_name")
-                //textView.text = obj2.getString("temp")
+                //tvGpsLocation.text = obj2.getString("temp") + " deg Celsius in " + obj2.getString("city_name")
+                tvGpsLocation.text = obj.toString()
             },
             // In case of any error
-           { textView.text = "That didn't work!" }
-        )
+            { tvGpsLocation!!.text = "That didn't work!" })
         queue.add(stringReq)
-    }
+    } */
+
 }
-*/
