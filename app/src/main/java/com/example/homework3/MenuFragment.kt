@@ -9,10 +9,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.Toast
-import android.widget.ToggleButton
+import android.widget.*
 import androidx.appcompat.widget.AppCompatImageButton
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
@@ -24,7 +21,6 @@ class MenuFragment : Fragment() {
     lateinit var returnToDisclaimer: ImageButton
     lateinit var goToCustom: ImageButton
     lateinit var goToWeather: Button
-
 
     var listPests = listOf("ants","bees","beetles", "cockroaches", "crickets", "flies", "mosquitos", "snakes", "spiders", "wasps")
     var  listClicks = mutableListOf<Int>()
@@ -40,6 +36,8 @@ class MenuFragment : Fragment() {
     lateinit var spider: ImageButton
     lateinit var wasp: ImageButton
 
+    // Duration of the toast 800 milli-seconds
+    private val mToastDuration = 800
 
 
     override fun onCreateView(
@@ -69,22 +67,24 @@ class MenuFragment : Fragment() {
             var pestString = listPests[i]
             var numClicks = listClicks[i]
             pest.setOnClickListener {
-                val toast = Toast.makeText(activity,"Playing sound to repel $pestString!",Toast.LENGTH_SHORT).show()
+                val toast: Toast
                 if (numClicks %2 == 0 ) {
                     it.setBackgroundResource(R.color.green_select)
+                    toast = Toast.makeText(activity,"Playing sound to repel $pestString!",Toast.LENGTH_SHORT)
                 } else {
                     it.setBackgroundResource(R.color.green_light)
+                    toast = Toast.makeText(activity,"Turned off $pestString sound.",Toast.LENGTH_SHORT)
                 }
+                toast.show()
+                // When button is clicked, counter starts
+                // and toast is called
+                //mDisplayToast(toast)
+
                 numClicks += 1
                 listClicks.set(i,numClicks)
             }
 
         }
-
-
-
-
-
 
 
         // navigating to tips page
@@ -133,6 +133,18 @@ class MenuFragment : Fragment() {
         animator.repeatMode = ObjectAnimator.REVERSE
         animator.disableViewDuringAnimation(goToCustom)
         animator.start()
+    }
+
+
+    // Function to invoke Toast
+    private fun mDisplayToast(toast: Toast){
+        Thread{
+            for(i in 1..mToastDuration/2000){
+                toast.show()
+                Thread.sleep(2000)
+                toast.cancel()
+            }
+        }.start()
     }
 
 }
