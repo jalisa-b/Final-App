@@ -9,10 +9,10 @@
 
     <ImageButton
         android:id="@+id/mosquito"
-        android:layout_width="64dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="124dp"
+        android:layout_width="68dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="140dp"
         android:adjustViewBounds="true"
         android:background="@color/green_light"
         android:contentDescription="Clickable picture of a mosquito"
@@ -23,24 +23,24 @@
 
     <ImageButton
         android:id="@+id/cockroach"
-        android:layout_width="68dp"
-        android:layout_height="67dp"
-        android:layout_marginTop="124dp"
+        android:layout_width="73dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="140dp"
         android:adjustViewBounds="true"
         android:background="@color/green_light"
         android:contentDescription="Clickable picture of a cockroach"
         android:scaleType="fitCenter"
         android:src="@drawable/cockroach"
         app:layout_constraintEnd_toStartOf="@+id/bee"
-        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toEndOf="@+id/mosquito"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/bee"
         android:layout_width="68dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="124dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="139dp"
         android:layout_marginEnd="48dp"
         android:adjustViewBounds="true"
         android:background="@color/green_light"
@@ -97,8 +97,8 @@
         android:id="@+id/beetle"
         android:layout_width="71dp"
         android:layout_height="67dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="44dp"
         android:adjustViewBounds="true"
         android:background="@color/green_light"
         android:contentDescription="Clickable picture of a beetle"
@@ -138,14 +138,14 @@
         android:id="@+id/wasp"
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:adjustViewBounds="true"
         android:background="@color/green_light"
         android:contentDescription="Clickable picture of a wasp"
         android:scaleType="fitCenter"
         android:src="@drawable/wasp"
         app:layout_constraintEnd_toStartOf="@+id/beetle"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.554"
         app:layout_constraintStart_toEndOf="@+id/snake"
         app:layout_constraintTop_toBottomOf="@+id/cricketText" />
 
@@ -153,7 +153,7 @@
         android:id="@+id/goToCustom"
         android:layout_width="67dp"
         android:layout_height="70dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="48dp"
         android:alpha=".6"
         android:backgroundTint="@color/green"
@@ -166,8 +166,8 @@
         android:id="@+id/returnToDisclaimer"
         android:layout_width="66dp"
         android:layout_height="53dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="@color/blue"
         android:src="?attr/actionModeCloseDrawable"
         app:layout_constraintStart_toStartOf="parent"
@@ -177,17 +177,14 @@
         android:id="@+id/tipsButton"
         android:layout_width="69dp"
         android:layout_height="49dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="88dp"
         android:backgroundTint="@color/blue"
         android:text="Tips"
         android:textColor="@color/purple_700"
         app:iconTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/customText"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/mosquitoText"
@@ -338,29 +335,35 @@
 
     <Button
         android:id="@+id/goToWeather"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="96dp"
+        android:layout_width="150dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="88dp"
         android:text="Get Weather"
+
+        android:textColor="@color/purple_700"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tipsButton"
-        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintHorizontal_bias="0.431"
         app:layout_constraintStart_toEndOf="@+id/returnToDisclaimer" />
 
     <TextView
         android:id="@+id/bugHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="339dp"
+        android:layout_height="97dp"
         android:layout_marginStart="23dp"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="68dp"
         android:layout_marginEnd="24dp"
-        android:text="Click a bug image to play ultrasonic repellent!"
+        android:fontFamily="@font/allerta"
+        android:text="Click a pest to play ultrasonic repellent! Remember, you won't be able to hear the sound."
         android:textAlignment="center"
+        android:textColor="@color/purple_700"
         android:textSize="18sp"
-        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/cockroach"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.64" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
