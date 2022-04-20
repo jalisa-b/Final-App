@@ -7,6 +7,6 @@
         <b>4. For itchy bites</b> Apply an anti-itch cream or topical ointment like hydrocortisone\n\n
         <b>5. To reduce swelling</b> Use ice or ice patches to reduce swelling.
     </string>
-    <string name="custom"> Use the slider and toggle button to create custom sounds to be played! </string>
+    <string name="custom"> Use the slider and toggle button to create custom sounds to be played! Sounds are in units of kHz. </string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
