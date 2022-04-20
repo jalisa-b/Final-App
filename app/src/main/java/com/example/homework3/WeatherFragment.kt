@@ -93,7 +93,8 @@ class WeatherFragment : Fragment(), LocationListener {
                     val jsonArray = response.getJSONArray("data")
 
                     val info = jsonArray.getJSONObject(0)
-                    var temp = info.getInt("temp")
+            Log.e("lat", info.toString())
+                    var temp = info.getDouble("temp")
                     val cityname = info.getString("city_name")
                     val statecode = info.getString("state_code")
                     val countrycode = info.getString("country_code")
@@ -105,10 +106,17 @@ class WeatherFragment : Fragment(), LocationListener {
             bannerView.setImageResource(R.drawable.picnic)
             //setting weather stuff into view
             if (countrycode.equals("US")){
-                val temp1 = (temp*(1.8) + 32)
-                tempText.text= "$temp1\u2109"
+                var tempString = (temp*(1.8) + 32).toString()
+                if (tempString.length>4){
+                    tempString = tempString.substring(0,3)
+                }
+                tempText.text= "$tempString \u2109"
             } else{
-                tempText.text= "$temp\u2103"
+                var tempString = temp.toString()
+                if (tempString.length>4){
+                    tempString = tempString.substring(0,3)
+                }
+                tempText.text= "$tempString \u2103"
             }
             cityText.text = "$cityname, $statecode, $countrycode"
             descriptionText.text = "$description"
@@ -118,7 +126,6 @@ class WeatherFragment : Fragment(), LocationListener {
         }
         }, { error -> error.printStackTrace() })
         requestQueue?.add(request)
-
     }
 
 }

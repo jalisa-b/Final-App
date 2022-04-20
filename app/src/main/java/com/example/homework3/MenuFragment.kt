@@ -76,9 +76,7 @@ class MenuFragment : Fragment() {
                     toast = Toast.makeText(activity,"Turned off $pestString sound.",Toast.LENGTH_SHORT)
                 }
                 toast.show()
-                // When button is clicked, counter starts
-                // and toast is called
-                //mDisplayToast(toast)
+
 
                 numClicks += 1
                 listClicks.set(i,numClicks)
