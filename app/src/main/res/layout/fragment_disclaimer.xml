@@ -28,7 +28,7 @@
         android:layout_width="340dp"
         android:layout_height="145dp"
         android:fontFamily="@font/average_sans"
-        android:text="We do NOT recommend using this app if you own rodents like rats, mice, guinea pigs, hamsters, and gerbils. This app emits sounds above 200,000 Hz. Small rodents can hear sounds up to 90,000 Hz, cats up  to 60,000 Hz, and dogs up to 40,000 Hz. (For reference, humans hear up to 20,000 Hz.) If you live in a small apartment or duplex, we recommend checking in with your neighbors before using this app."
+        android:text="We do NOT recommend using this app if you own rodents like rats, mice, guinea pigs, hamsters, and gerbils. This app emits sounds above 80,000 Hz. Small rodents can hear sounds up to 90,000 Hz, cats up  to 60,000 Hz, and dogs up to 40,000 Hz. (For reference, humans hear up to 20,000 Hz.) If you live in a small apartment or duplex, we recommend checking in with your neighbors before using this app."
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@color/purple_700"
         android:textSize="14sp"

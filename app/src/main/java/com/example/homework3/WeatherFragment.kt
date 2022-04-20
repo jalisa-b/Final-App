@@ -108,13 +108,13 @@ class WeatherFragment : Fragment(), LocationListener {
             if (countrycode.equals("US")){
                 var tempString = (temp*(1.8) + 32).toString()
                 if (tempString.length>4){
-                    tempString = tempString.substring(0,3)
+                    tempString = tempString.substring(0,4)
                 }
                 tempText.text= "$tempString \u2109"
             } else{
                 var tempString = temp.toString()
                 if (tempString.length>4){
-                    tempString = tempString.substring(0,3)
+                    tempString = tempString.substring(0,4)
                 }
                 tempText.text= "$tempString \u2103"
             }
