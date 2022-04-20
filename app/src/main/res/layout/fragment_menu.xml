@@ -9,10 +9,10 @@
 
     <ImageButton
         android:id="@+id/mosquito"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="64dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="124dp"
         android:adjustViewBounds="true"
         android:background="@color/green_light"
         android:contentDescription="Clickable picture of a mosquito"
@@ -23,23 +23,24 @@
 
     <ImageButton
         android:id="@+id/cockroach"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="68dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="124dp"
         android:adjustViewBounds="true"
         android:background="@color/green_light"
         android:contentDescription="Clickable picture of a cockroach"
         android:scaleType="fitCenter"
         android:src="@drawable/cockroach"
         app:layout_constraintEnd_toStartOf="@+id/bee"
+        app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toEndOf="@+id/mosquito"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/bee"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="68dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="124dp"
         android:layout_marginEnd="48dp"
         android:adjustViewBounds="true"
         android:background="@color/green_light"
@@ -51,10 +52,10 @@
 
     <ImageButton
         android:id="@+id/fly"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="48dp"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="52dp"
         android:adjustViewBounds="true"
         android:background="@color/green_light"
         android:contentDescription="Clickable picture of a fly"
@@ -65,10 +66,10 @@
 
     <ImageButton
         android:id="@+id/ant"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="68dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="20dp"
         android:adjustViewBounds="true"
         android:background="@color/green_light"
         android:contentDescription="Clickable picture of a ant"
@@ -79,24 +80,24 @@
 
     <ImageButton
         android:id="@+id/cricket"
-        android:layout_width="97dp"
-        android:layout_height="86dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="63dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="24dp"
         android:adjustViewBounds="true"
         android:background="@color/green_light"
         android:contentDescription="Clickable picture of a cricket"
         android:scaleType="fitCenter"
         android:src="@drawable/cricket"
         app:layout_constraintEnd_toStartOf="@+id/fly"
-        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toEndOf="@+id/ant"
         app:layout_constraintTop_toBottomOf="@+id/cockroachText" />
 
     <ImageButton
         android:id="@+id/beetle"
-        android:layout_width="93dp"
-        android:layout_height="93dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="71dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="48dp"
         android:adjustViewBounds="true"
         android:background="@color/green_light"
@@ -108,10 +109,10 @@
 
     <ImageButton
         android:id="@+id/spider"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="75dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="20dp"
         android:background="@color/green_light"
         android:contentDescription="Clickable picture of a beetle"
         android:scaleType="fitCenter"
@@ -121,10 +122,10 @@
 
     <ImageButton
         android:id="@+id/snake"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="72dp"
+        android:layout_height="71dp"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:adjustViewBounds="true"
         android:background="@color/green_light"
         android:contentDescription="Clickable picture of a snake"
@@ -135,23 +136,24 @@
 
     <ImageButton
         android:id="@+id/wasp"
-        android:layout_width="94dp"
-        android:layout_height="96dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="16dp"
         android:adjustViewBounds="true"
         android:background="@color/green_light"
         android:contentDescription="Clickable picture of a wasp"
         android:scaleType="fitCenter"
         android:src="@drawable/wasp"
         app:layout_constraintEnd_toStartOf="@+id/beetle"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toEndOf="@+id/snake"
         app:layout_constraintTop_toBottomOf="@+id/cricketText" />
 
     <ImageButton
         android:id="@+id/goToCustom"
-        android:layout_width="85dp"
-        android:layout_height="86dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="67dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="48dp"
         android:alpha=".6"
         android:backgroundTint="@color/green"
@@ -162,21 +164,19 @@
 
     <ImageButton
         android:id="@+id/returnToDisclaimer"
-        android:layout_width="77dp"
-        android:layout_height="73dp"
+        android:layout_width="66dp"
+        android:layout_height="53dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="80dp"
         android:backgroundTint="@color/blue"
         android:src="?attr/actionModeCloseDrawable"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spiderText" />
 
     <Button
         android:id="@+id/tipsButton"
-        android:layout_width="86dp"
-        android:layout_height="67dp"
+        android:layout_width="69dp"
+        android:layout_height="49dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="80dp"
@@ -186,7 +186,8 @@
         app:iconTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/customText" />
+        app:layout_constraintTop_toBottomOf="@+id/customText"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/mosquitoText"
@@ -225,7 +226,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.035"
+        app:layout_constraintHorizontal_bias="0.19"
         app:layout_constraintStart_toEndOf="@+id/cockroachText"
         app:layout_constraintTop_toBottomOf="@+id/bee" />
 
@@ -266,7 +267,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.221"
+        app:layout_constraintHorizontal_bias="0.346"
         app:layout_constraintStart_toEndOf="@+id/cricketText"
         app:layout_constraintTop_toBottomOf="@+id/fly" />
 
@@ -300,7 +301,7 @@
         android:id="@+id/beetleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="68dp"
         android:layout_marginTop="4dp"
         android:text="BEETLE"
         android:textColor="@color/black"
@@ -313,7 +314,7 @@
         android:id="@+id/spiderText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="4dp"
         android:text="SPIDER"
         android:textColor="@color/black"
@@ -326,8 +327,8 @@
         android:id="@+id/customText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="55dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="48dp"
         android:text="CUSTOM"
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -343,8 +344,23 @@
         android:text="Get Weather"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tipsButton"
-        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toEndOf="@+id/returnToDisclaimer" />
+
+    <TextView
+        android:id="@+id/bugHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="24dp"
+        android:text="Click a bug image to play ultrasonic repellent!"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
