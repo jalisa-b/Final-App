@@ -1,4 +1,4 @@
-package com.example.homework3
+package com.dotexe.homework3
 
 import android.Manifest
 import android.content.Context
@@ -33,7 +33,60 @@ class WeatherFragment : Fragment(), LocationListener {
     lateinit var loadingView: ImageView
     lateinit var bannerView: ImageView
 
-    //weather url to get JSON
+    val commonPestDict = mutableMapOf("Alabama" to listOf<String>("cockroach","ants","snakes"),
+         "Alaska" to listOf<String>("mosquito","wasp","ant"),
+         "Arizona" to listOf<String>("scorpion"),
+        "Arkansas" to listOf<String>("spider"),
+        "California" to listOf<String>("mouse" ,"mosquito","spider","wasp","cockroach"),
+        "Colorado" to listOf<String>("mouse","wasp","sider"),
+        "Connecticut" to listOf<String>("mouse","ant"),
+        "District of Colombia" to listOf<String>("bee"),
+        "Delaware" to listOf<String>("cockroach"),
+        "Florida" to listOf<String>("cockroach","ant","mosquito"),
+        "Georgia" to listOf<String>("cockroach","ant","bee"),
+        "Hawaii" to listOf<String>("cockroach"),
+        "Idaho" to listOf<String>("spider","ant"),
+        "Illinois" to listOf<String>("bee","beetle"),
+        "Indiana" to listOf<String>("bee"),
+        "Iowa" to listOf<String>("mouse","spider"),
+        "Kansas" to listOf<String>("bee","spider"),
+        "Kentucky" to listOf<String>("bee"),
+        "Louisiana" to listOf<String>("cockroach","ant"),
+        "Maine" to listOf<String>("mouse","ant"),
+        "Maryland" to listOf<String>("mouse","cockroach"),
+        "Massachusetts" to listOf<String>("mouse","bee","ant"),
+        "Michigan" to listOf<String>("ant"),
+        "Minnesota" to listOf<String>("mouse"),
+        "Mississippi" to listOf<String>("ant","snake"),
+        "Missouri" to listOf<String>("bee"),
+        "Montana" to listOf<String>("ant","bee","spdier"),
+        "Nebraska" to listOf<String>("beetle"),
+        "Nevada" to listOf<String>("scorpion","ant"),
+        "NewHampshire" to listOf<String>("mouse","ant"),
+        "NewJersey" to listOf<String>("mouse","wasp","beetle"),
+        "NewMexico" to listOf<String>("ant"),
+        "NewYork" to listOf<String>("mouse","cockroach"),
+        "NorthCarolina" to listOf<String>("cockroach"),
+        "NorthDakota" to listOf<String>("mouse","mosquito","snail"),
+        "Ohio" to listOf<String>("bee","mosquito","wasp","ant","cockroach"),
+        "Oklahoma" to listOf<String>("spider"),
+        "Oregon" to listOf<String>("mouse","bee"),
+        "Pennsylvania" to listOf<String>("mouse","cockroach"),
+        "RhodeIsland" to listOf<String>("mouse","mosquito","ant"),
+        "SouthCarolina" to listOf<String>("ant"),
+        "SouthDakota" to listOf<String>("mosquito","spider"),
+        "Tennessee" to listOf<String>("bee"),
+        "Texas" to listOf<String>("cockroach","ant","mosquito","ant","wasp","bee"),
+        "Utah" to listOf<String>("spider","scorpion"),
+        "Vermont" to listOf<String>("mouse","ant"),
+        "Virginia" to listOf<String>("mouse","cockroach"),
+        "Washington" to listOf<String>("spider"),
+        "WestVirginia" to listOf<String>("snake"),
+        "Wisconsin" to listOf<String>("mouse","beetle"),
+        "Wyoming" to listOf<String>("spider"),
+        )
+
+        //weather url to get JSON
     var weather_url1 = ""
     //api id for url
     var api_id1 = "eb1fbbe5a02240e7a29493eede818b43"

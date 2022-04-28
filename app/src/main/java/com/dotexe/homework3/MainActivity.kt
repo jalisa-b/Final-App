@@ -1,4 +1,4 @@
-package com.example.homework3
+package com.dotexe.homework3
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

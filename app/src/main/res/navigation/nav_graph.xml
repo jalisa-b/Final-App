@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/disclaimerFragment"
-        android:name="com.example.homework3.DisclaimerFragment"
+        android:name="com.dotexe.homework3.DisclaimerFragment"
         android:label="fragment_disclaimer"
         tools:layout="@layout/fragment_disclaimer" >
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/menuFragment"
-        android:name="com.example.homework3.MenuFragment"
+        android:name="com.dotexe.homework3.MenuFragment"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" >
         <action
@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/tipsFragment"
-        android:name="com.example.homework3.TipsFragment"
+        android:name="com.dotexe.homework3.TipsFragment"
         android:label="fragment_tips"
         tools:layout="@layout/fragment_tips" >
         <action
@@ -45,7 +45,7 @@
     </fragment>
     <fragment
         android:id="@+id/customizeFragment"
-        android:name="com.example.homework3.CustomizeFragment"
+        android:name="com.dotexe.homework3.CustomizeFragment"
         android:label="fragment_customize"
         tools:layout="@layout/fragment_customize" >
         <action
@@ -54,7 +54,7 @@
     </fragment>
     <fragment
         android:id="@+id/weatherFragment"
-        android:name="com.example.homework3.WeatherFragment"
+        android:name="com.dotexe.homework3.WeatherFragment"
         android:label="fragment_weather"
         tools:layout="@layout/fragment_weather">
         <action
