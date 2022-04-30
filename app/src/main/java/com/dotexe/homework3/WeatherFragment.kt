@@ -29,61 +29,62 @@ class WeatherFragment : Fragment(), LocationListener {
     private lateinit var tempText: TextView
     private lateinit var cityText: TextView
     private lateinit var descriptionText: TextView
+    private lateinit var suggestionText: TextView
     private val locationPermissionCode = 2
     lateinit var loadingView: ImageView
     lateinit var bannerView: ImageView
 
-    val commonPestDict = mutableMapOf("Alabama" to listOf<String>("cockroach","ants","snakes"),
-         "Alaska" to listOf<String>("mosquito","wasp","ant"),
-         "Arizona" to listOf<String>("scorpion"),
-        "Arkansas" to listOf<String>("spider"),
-        "California" to listOf<String>("mouse" ,"mosquito","spider","wasp","cockroach"),
-        "Colorado" to listOf<String>("mouse","wasp","sider"),
-        "Connecticut" to listOf<String>("mouse","ant"),
-        "District of Colombia" to listOf<String>("bee"),
-        "Delaware" to listOf<String>("cockroach"),
-        "Florida" to listOf<String>("cockroach","ant","mosquito"),
-        "Georgia" to listOf<String>("cockroach","ant","bee"),
-        "Hawaii" to listOf<String>("cockroach"),
-        "Idaho" to listOf<String>("spider","ant"),
-        "Illinois" to listOf<String>("bee","beetle"),
-        "Indiana" to listOf<String>("bee"),
-        "Iowa" to listOf<String>("mouse","spider"),
-        "Kansas" to listOf<String>("bee","spider"),
-        "Kentucky" to listOf<String>("bee"),
-        "Louisiana" to listOf<String>("cockroach","ant"),
-        "Maine" to listOf<String>("mouse","ant"),
-        "Maryland" to listOf<String>("mouse","cockroach"),
-        "Massachusetts" to listOf<String>("mouse","bee","ant"),
-        "Michigan" to listOf<String>("ant"),
-        "Minnesota" to listOf<String>("mouse"),
-        "Mississippi" to listOf<String>("ant","snake"),
-        "Missouri" to listOf<String>("bee"),
-        "Montana" to listOf<String>("ant","bee","spdier"),
-        "Nebraska" to listOf<String>("beetle"),
-        "Nevada" to listOf<String>("scorpion","ant"),
-        "NewHampshire" to listOf<String>("mouse","ant"),
-        "NewJersey" to listOf<String>("mouse","wasp","beetle"),
-        "NewMexico" to listOf<String>("ant"),
-        "NewYork" to listOf<String>("mouse","cockroach"),
-        "NorthCarolina" to listOf<String>("cockroach"),
-        "NorthDakota" to listOf<String>("mouse","mosquito","snail"),
-        "Ohio" to listOf<String>("bee","mosquito","wasp","ant","cockroach"),
-        "Oklahoma" to listOf<String>("spider"),
-        "Oregon" to listOf<String>("mouse","bee"),
-        "Pennsylvania" to listOf<String>("mouse","cockroach"),
-        "RhodeIsland" to listOf<String>("mouse","mosquito","ant"),
-        "SouthCarolina" to listOf<String>("ant"),
-        "SouthDakota" to listOf<String>("mosquito","spider"),
-        "Tennessee" to listOf<String>("bee"),
-        "Texas" to listOf<String>("cockroach","ant","mosquito","ant","wasp","bee"),
-        "Utah" to listOf<String>("spider","scorpion"),
-        "Vermont" to listOf<String>("mouse","ant"),
-        "Virginia" to listOf<String>("mouse","cockroach"),
-        "Washington" to listOf<String>("spider"),
-        "WestVirginia" to listOf<String>("snake"),
-        "Wisconsin" to listOf<String>("mouse","beetle"),
-        "Wyoming" to listOf<String>("spider"),
+    val commonPestDict = mutableMapOf("AL" to listOf<String>("cockroach","ants","snakes"),
+         "AK" to listOf<String>("mosquito","wasp","ant"),
+         "AZ" to listOf<String>("scorpion"),
+        "AR" to listOf<String>("spider"),
+        "CA" to listOf<String>("mouse" ,"mosquito","spider","wasp","cockroach"),
+        "CO" to listOf<String>("mouse","wasp","sider"),
+        "CT" to listOf<String>("mouse","ant"),
+        "DC" to listOf<String>("bee"),
+        "DE" to listOf<String>("cockroach"),
+        "FL" to listOf<String>("cockroach","ant","mosquito"),
+        "GA" to listOf<String>("cockroach","ant","bee"),
+        "HI" to listOf<String>("cockroach"),
+        "ID" to listOf<String>("spider","ant"),
+        "IL" to listOf<String>("bee","beetle"),
+        "IN" to listOf<String>("bee"),
+        "IA" to listOf<String>("mouse","spider"),
+        "KS" to listOf<String>("bee","spider"),
+        "KY" to listOf<String>("bee"),
+        "LA" to listOf<String>("cockroach","ant"),
+        "ME" to listOf<String>("mouse","ant"),
+        "MD" to listOf<String>("mouse","cockroach"),
+        "MA" to listOf<String>("mouse","bee","ant"),
+        "MI" to listOf<String>("ant"),
+        "MN" to listOf<String>("mouse"),
+        "MS" to listOf<String>("ant","snake"),
+        "MO" to listOf<String>("bee"),
+        "MT" to listOf<String>("ant","bee","spdier"),
+        "NE" to listOf<String>("beetle"),
+        "NV" to listOf<String>("scorpion","ant"),
+        "NH" to listOf<String>("mouse","ant"),
+        "NJ" to listOf<String>("mouse","wasp","beetle"),
+        "NM" to listOf<String>("ant"),
+        "NY" to listOf<String>("mouse","cockroach"),
+        "NC" to listOf<String>("cockroach"),
+        "ND" to listOf<String>("mouse","mosquito","snail"),
+        "OH" to listOf<String>("bee","mosquito","wasp","ant","cockroach"),
+        "OK" to listOf<String>("spider"),
+        "OR" to listOf<String>("mouse","bee"),
+        "PA" to listOf<String>("mouse","cockroach"),
+        "RI" to listOf<String>("mouse","mosquito","ant"),
+        "SC" to listOf<String>("ant"),
+        "SD" to listOf<String>("mosquito","spider"),
+        "TN" to listOf<String>("bee"),
+        "TX" to listOf<String>("cockroach","ant","mosquito","ant","wasp","bee"),
+        "UT" to listOf<String>("spider","scorpion"),
+        "VT" to listOf<String>("mouse","ant"),
+        "VA" to listOf<String>("mouse","cockroach"),
+        "WA" to listOf<String>("spider"),
+        "WV" to listOf<String>("snake"),
+        "WI" to listOf<String>("mouse","beetle"),
+        "WY" to listOf<String>("spider"),
         )
 
         //weather url to get JSON
@@ -103,8 +104,9 @@ class WeatherFragment : Fragment(), LocationListener {
         tempText = view.findViewById<TextView>(R.id.temperature)
         cityText = view.findViewById<TextView>(R.id.city)
         descriptionText = view.findViewById<TextView>(R.id.description)
-        loadingView = view.findViewById(R.id.imageView)
+        loadingView = view.findViewById(R.id.loadingView)
         bannerView = view.findViewById(R.id.bottomBanner)
+        suggestionText = view.findViewById(R.id.suggestion)
 
         //loading spinner gif on create
         Glide.with(view.context).load(R.drawable.spinner).into(loadingView)
@@ -136,6 +138,18 @@ class WeatherFragment : Fragment(), LocationListener {
             }
 
         }
+    }
+
+    fun getSuggestion(stateCode: String): String {
+        val message = "Based off of your location, we recommend repelling"
+        for (entry in commonPestDict.entries.iterator()) {
+            if (entry.key == stateCode) {
+                message.plus(entry.value)
+                return message
+            }
+        }
+        return "We are sorry. our recommendation service does not work in your country."
+
     }
     fun getTemperature( latitude: Double, longitude: Double) {
         //https://riis.com/blog/sending-requests-using-android-volley/
@@ -173,6 +187,7 @@ class WeatherFragment : Fragment(), LocationListener {
             }
             cityText.text = "$cityname, $statecode, $countrycode"
             descriptionText.text = "$description"
+            suggestionText.text =  getSuggestion(statecode)
 
         } catch (e: JSONException) {
             e.printStackTrace()

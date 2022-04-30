@@ -9,24 +9,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import com.ms.square.android.expandabletextview.ExpandableTextView
 
-
-class DisclaimerFragment : Fragment() {
-
-    lateinit var nextButton: Button
-    lateinit var expandableText: ExpandableTextView
-
-
-    // using onCreateView to set up transition between fragments
+class InfoFragment : Fragment() {
+    lateinit var backButton: ImageButton
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment and store in view
-        val view = inflater.inflate(R.layout.fragment_disclaimer, container, false)
+        val view = inflater.inflate(R.layout.fragment_info, container, false)
 
         // getting reference of ExpandableTextView
         // getting reference of ExpandableTextView
@@ -41,14 +35,14 @@ class DisclaimerFragment : Fragment() {
 
 
         //val disclaimerText = view.findViewById<TextView>(R.id.disclaimer)
-        nextButton = view.findViewById<Button>(R.id.agree)
-        nextButton.setOnClickListener{
+        backButton = view.findViewById<ImageButton>(R.id.backButton)
+        backButton.setOnClickListener{
 
             scaler()
-            //Navigation.findNavController(view).navigate(R.id.action_disclaimerFragment_to_menuFragment)
+            Navigation.findNavController(view).navigate(R.id.action_infoFragment_to_menuFragment)
         }
 
-            return view
+        return view
 
     }
 
@@ -66,12 +60,10 @@ class DisclaimerFragment : Fragment() {
     private fun scaler() {
         val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X,2f)
         val scaleY = PropertyValuesHolder.ofFloat(View.SCALE_Y,2f)
-        val animator = ObjectAnimator.ofPropertyValuesHolder(nextButton,scaleX,scaleY)
+        val animator = ObjectAnimator.ofPropertyValuesHolder(backButton,scaleX,scaleY)
         animator.repeatCount = 1
         animator.repeatMode = ObjectAnimator.REVERSE
-        animator.disableViewDuringAnimation(nextButton)
+        animator.disableViewDuringAnimation(backButton)
         animator.start()
     }
-
-
 }

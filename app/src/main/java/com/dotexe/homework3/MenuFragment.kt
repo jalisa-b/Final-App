@@ -91,7 +91,7 @@ class MenuFragment : Fragment() {
         // navigating to disclaimer page
         returnToDisclaimer = view.findViewById<ImageButton>(R.id.returnToDisclaimer)
         returnToDisclaimer.setOnClickListener{
-            Navigation.findNavController(view).navigate(R.id.action_menuFragment_to_disclaimerFragment)}
+            Navigation.findNavController(view).navigate(R.id.action_menuFragment_to_infoFragment)}
 
         // navigating to customize page
         goToCustom = view.findViewById<ImageButton>(R.id.goToCustom)

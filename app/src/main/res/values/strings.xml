@@ -9,4 +9,24 @@
     </string>
     <string name="custom"> Use the slider and toggle button to create custom sounds to be played! Sounds are in units of kHz. </string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="answer2">We do NOT recommend using this app if you own rodents like rats, mice, guinea pigs, hamsters, and gerbils. This app emits sounds above 80,000 Hz. Small rodents can hear sounds up to 90,000 Hz, cats up to 60,000 Hz, and dogs up to 40,000 Hz. (For reference, humans hear up to 20,000 Hz.) If you live in a small apartment or duplex, we recommend checking in with your neighbors before using this app.</string>
+    <string name="question1">How do ultrasonic pest repellers work?</string>
+    <string name="question2">Are the sounds emitted by this app harmful to household pets?</string>
+    <string name="answer1">Ultrasonic pest repellers emit high-frequency sound waves inaudible to humans. These sounds are extremely irritating to cockroaches, mice, wasps, and other disagreeable pests. While these sounds do not kill anything, they are highly aggravating, deterring pests from nesting or staying near the sound’s source (your phone).</string>
+    <string name="question3">Is this app a viable replacement to pest control?</string>
+    <string name="answer3">There are downsides to extreme measures of pest control. The cost can run high. Poison can be harmful to children, pregnant and nursing women, and pets. That being said, if you are facing an infestation that is degrading your quality of life, you should contact your local pest control.</string>
+    <string name="question4">Is ultrasonic pest repellent technology backed by science?</string>
+    <string name="answer4">As of now, no. The studies on it are far and few.</string>
+    <string name="faq"><b>How do ultrasonic pest repellers work?</b> \n \n
+        Ultrasonic pest repellers emit high-pitch sounds inaudible to humans. These sounds are extremely irritating to cockroaches, mice, wasps, and other, detering pests from nesting or staying near the sound’s source (your phone).
+       \n \n <b>Are the sounds emitted by this app harmful to household pets?</b>
+        \n \n We do NOT recommend using this app if you own rodents like rats, mice, guinea pigs, hamsters, and gerbils. This app emits sounds above 80,000 Hz. Small rodents can hear sounds up to 90,000 Hz, cats up to 60,000 Hz, and dogs up to 40,000 Hz. (For reference, humans hear up to 20,000 Hz.) If you live in a small apartment or duplex, we recommend checking in with your neighbors before using this app.
+        \n \n <b>Is this app a viable replacement to pest control?</b>
+        \n \n There are downsides to extreme pest control measures. The cost can run high. Poison harm children, pregnant and nursing women, and pets. However, if you are facing an infestation degrading your quality of life, you should contact your local pest control.
+
+</string>
+
+
+
+
 </resources>
