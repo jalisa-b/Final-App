@@ -19,7 +19,7 @@ class CustomizeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_customize, container, false)
 
         // navigate to main screen
-        val goToMain = view.findViewById<ImageButton>(R.id.goToMain)
+        val goToMain = view.findViewById<ImageButton>(R.id.backButton)
         goToMain.setOnClickListener{
             Navigation.findNavController(view).navigate(R.id.action_customizeFragment_to_menuFragment)}
 
