@@ -140,18 +140,23 @@ class WeatherFragment : Fragment(), LocationListener {
         }
     }
 
-    fun getSuggestion(stateCode: String): String {
-        val message = "Based off of your location, we recommend repelling"
-        for (entry in commonPestDict.entries.iterator()) {
-            if (entry.key == stateCode) {
-                //for (pest in entry.value){
-                    //message.plus(pest).plus(", ")
-                //}
-
-                return message
+    fun getSuggestion(statecode: String) {
+        var message = "Based on your location, we recommend selecting to repel the "
+        for ((state, list) in commonPestDict) {
+            if (state == statecode) {
+                for (pest in list) {
+                    Log.e("pest", pest)
+                    if (list.indexOf(pest) == list.size-1){
+                        message = message.plus(" and ").plus(pest).plus(".")
+                    } else {
+                        message = message.plus(pest).plus(", ")
+                    }
+                    Log.e("message", message)
+                }
             }
         }
-        return "We are sorry. our recommendation service does not work in your country."
+        suggestionText.text =  message
+
 
     }
     fun getTemperature( latitude: Double, longitude: Double) {
@@ -180,6 +185,7 @@ class WeatherFragment : Fragment(), LocationListener {
                 if (tempString.length>4){
                     tempString = tempString.substring(0,4)
                 }
+                getSuggestion(statecode)
                 tempText.text= "$tempString\u2109"
             } else{
                 var tempString = temp.toString()
@@ -187,10 +193,11 @@ class WeatherFragment : Fragment(), LocationListener {
                     tempString = tempString.substring(0,4)
                 }
                 tempText.text= "$tempString\u2103"
+                suggestionText.text =  "We are sorry. our recommendation service does not work in your country."
             }
             cityText.text = "$cityname, $statecode, $countrycode"
             descriptionText.text = "$description"
-            suggestionText.text =  getSuggestion(statecode)
+
 
         } catch (e: JSONException) {
             e.printStackTrace()

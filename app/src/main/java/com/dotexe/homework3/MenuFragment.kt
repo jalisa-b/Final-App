@@ -20,7 +20,7 @@ class MenuFragment : Fragment() {
     lateinit var goToCustom: ImageButton
     lateinit var goToWeather: ImageButton
 
-    var listPests = listOf("ants","bees","beetles", "cockroaches", "crickets", "flies", "mosquitos", "snakes", "spiders", "wasps")
+    var listPests = listOf("ants","bees","beetles", "cockroaches", "crickets", "flies", "mosquitos", "snakes", "spiders", "wasps", "mice")
     var  listClicks = mutableListOf<Int>()
 
     lateinit var ant: ImageButton
@@ -33,6 +33,7 @@ class MenuFragment : Fragment() {
     lateinit var snake: ImageButton
     lateinit var spider: ImageButton
     lateinit var wasp: ImageButton
+    lateinit var mouse: ImageButton
 
 
     override fun onCreateView(
@@ -52,8 +53,9 @@ class MenuFragment : Fragment() {
         snake = view.findViewById(R.id.snake)
         spider = view.findViewById(R.id.spider)
         wasp = view.findViewById(R.id.wasp)
+        mouse = view.findViewById(R.id.mouse)
 
-        var  listPestButtons = listOf(ant, bee, beetle, cockroach, cricket, fly, mosquito, snake, spider, wasp)
+        var  listPestButtons = listOf(ant, bee, beetle, cockroach, cricket, fly, mosquito, snake, spider, wasp,mouse)
         for (pest in listPestButtons){
             listClicks.add(0) }
 

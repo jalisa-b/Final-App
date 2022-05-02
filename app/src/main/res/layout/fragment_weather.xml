@@ -51,8 +51,8 @@
             android:fontFamily="sans-serif-medium"
             android:text=""
             android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-            android:textColor="@color/purple_700" />
+            android:textColor="@color/purple_700"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/city"
@@ -66,8 +66,8 @@
             android:layout_marginEnd="60dp"
             android:fontFamily="sans-serif-medium"
             android:text=""
+            android:textSize="22sp"
             android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@color/purple_700" />
 
         <TextView
@@ -77,15 +77,14 @@
             android:layout_below="@+id/city"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="53dp"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="18dp"
             android:layout_marginEnd="44dp"
             android:layout_toEndOf="@+id/temperature"
             android:fontFamily="@font/average_sans"
             android:text=""
             android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/purple_700"
-            android:textSize="30sp" />
+           android:textColor="@color/purple_700"
+            android:textSize="18sp" />
 
 
         <TextView
@@ -103,20 +102,20 @@
             android:fontFamily="@font/average_sans"
             android:text=""
             android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="20sp"
             android:textColor="@color/purple_700"
-            android:textSize="30sp" />
+            />
 
         <ImageView
             android:id="@+id/bottomBanner"
-            android:layout_width="415dp"
-            android:layout_height="437dp"
+            android:layout_width="408dp"
+            android:layout_height="362dp"
             android:layout_alignTop="@id/description"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="-20dp"
-            android:layout_marginTop="75dp"
+            android:layout_marginTop="196dp"
             android:layout_marginEnd="-20dp"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="-98dp"
             android:alpha=".7" />
 
         <ImageView

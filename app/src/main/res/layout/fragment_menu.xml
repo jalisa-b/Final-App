@@ -112,7 +112,7 @@
         android:id="@+id/spider"
         android:layout_width="75dp"
         android:layout_height="73dp"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="72dp"
 
         android:background="@color/green_light"
         android:contentDescription="Clickable picture of a beetle"
@@ -121,13 +121,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/snakeText"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.02" />
 
     <ImageButton
         android:id="@+id/snake"
         android:layout_width="72dp"
         android:layout_height="71dp"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="76dp"
         android:layout_marginTop="4dp"
         android:adjustViewBounds="true"
         android:background="@color/green_light"
@@ -151,6 +151,21 @@
         app:layout_constraintHorizontal_bias="0.519"
         app:layout_constraintStart_toEndOf="@+id/snake"
         app:layout_constraintTop_toBottomOf="@+id/cricketText" />
+
+    <ImageButton
+        android:id="@+id/mouse"
+        android:layout_width="72dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="4dp"
+        android:adjustViewBounds="true"
+        android:background="@color/green_light"
+        android:contentDescription="Clickable picture of a snake"
+        android:scaleType="fitCenter"
+        android:src="@drawable/mouse"
+        app:layout_constraintEnd_toStartOf="@+id/goToCustom"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toEndOf="@+id/spider"
+        app:layout_constraintTop_toBottomOf="@+id/waspText" />
 
     <ImageButton
         android:id="@+id/goToCustom"
@@ -252,7 +267,7 @@
         android:id="@+id/snakeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="4dp"
         android:text="SNAKE"
         android:textColor="@color/black"
@@ -261,11 +276,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/snake" />
 
+
     <TextView
         android:id="@+id/waspText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="62dp"
         android:layout_marginTop="4dp"
         android:text="WASP"
         android:textColor="@color/black"
@@ -278,7 +294,7 @@
         android:id="@+id/beetleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="44dp"
         android:layout_marginTop="4dp"
         android:text="BEETLE"
         android:textColor="@color/black"
@@ -291,7 +307,7 @@
         android:id="@+id/spiderText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
+        android:layout_marginStart="88dp"
         android:layout_marginTop="4dp"
         android:text="SPIDER"
         android:textColor="@color/black"
@@ -300,6 +316,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spider" />
 
+    <TextView
+        android:id="@+id/mouseText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="MOUSE"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/customText"
+        app:layout_constraintStart_toEndOf="@+id/spiderText"
+        app:layout_constraintTop_toBottomOf="@+id/mouse" />
 
     <TextView
         android:id="@+id/customText"
