@@ -87,8 +87,8 @@ class WeatherFragment : Fragment(), LocationListener {
         "WY" to listOf<String>("spider"),
         )
 
-        //weather url to get JSON
-    var weather_url1 = ""
+
+
     //api id for url
     var api_id1 = "eb1fbbe5a02240e7a29493eede818b43"
     private var requestQueue: RequestQueue? = null
@@ -97,7 +97,7 @@ class WeatherFragment : Fragment(), LocationListener {
         savedInstanceState: Bundle?
     ): View? {
         val view =  inflater.inflate(R.layout.fragment_weather, container, false)
-        val returnToMain = view.findViewById<ImageButton>(R.id.returnToMain)
+        val returnToMain = view.findViewById<ImageButton>(R.id.goToMain)
         returnToMain.setOnClickListener{
             Navigation.findNavController(view).navigate(R.id.action_weatherFragment_to_menuFragment)}
 
@@ -144,7 +144,10 @@ class WeatherFragment : Fragment(), LocationListener {
         val message = "Based off of your location, we recommend repelling"
         for (entry in commonPestDict.entries.iterator()) {
             if (entry.key == stateCode) {
-                message.plus(entry.value)
+                //for (pest in entry.value){
+                    //message.plus(pest).plus(", ")
+                //}
+
                 return message
             }
         }
@@ -158,7 +161,7 @@ class WeatherFragment : Fragment(), LocationListener {
         val request = JsonObjectRequest(Request.Method.GET, url, null, {
                 response ->try {
                     val jsonArray = response.getJSONArray("data")
-
+            Log.e("lat","parsing")
                     val info = jsonArray.getJSONObject(0)
             Log.e("lat", info.toString())
                     var temp = info.getDouble("temp")
@@ -177,13 +180,13 @@ class WeatherFragment : Fragment(), LocationListener {
                 if (tempString.length>4){
                     tempString = tempString.substring(0,4)
                 }
-                tempText.text= "$tempString \u2109"
+                tempText.text= "$tempString\u2109"
             } else{
                 var tempString = temp.toString()
                 if (tempString.length>4){
                     tempString = tempString.substring(0,4)
                 }
-                tempText.text= "$tempString \u2103"
+                tempText.text= "$tempString\u2103"
             }
             cityText.text = "$cityname, $statecode, $countrycode"
             descriptionText.text = "$description"

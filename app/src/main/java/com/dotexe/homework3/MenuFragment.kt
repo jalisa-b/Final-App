@@ -15,10 +15,10 @@ import androidx.navigation.Navigation
 
 class MenuFragment : Fragment() {
 
-    lateinit var tipsButton: Button
+    lateinit var tipsButton: ImageButton
     lateinit var returnToDisclaimer: ImageButton
     lateinit var goToCustom: ImageButton
-    lateinit var goToWeather: Button
+    lateinit var goToWeather: ImageButton
 
     var listPests = listOf("ants","bees","beetles", "cockroaches", "crickets", "flies", "mosquitos", "snakes", "spiders", "wasps")
     var  listClicks = mutableListOf<Int>()
@@ -33,9 +33,6 @@ class MenuFragment : Fragment() {
     lateinit var snake: ImageButton
     lateinit var spider: ImageButton
     lateinit var wasp: ImageButton
-
-    // Duration of the toast 800 milli-seconds
-    private val mToastDuration = 800
 
 
     override fun onCreateView(
@@ -84,12 +81,12 @@ class MenuFragment : Fragment() {
 
 
         // navigating to tips page
-        tipsButton = view.findViewById<Button>(R.id.tipsButton)
+        tipsButton = view.findViewById<ImageButton>(R.id.tipsButton)
         tipsButton.setOnClickListener{
             Navigation.findNavController(view).navigate(R.id.action_menuFragment_to_tipsFragment)}
 
         // navigating to disclaimer page
-        returnToDisclaimer = view.findViewById<ImageButton>(R.id.returnToDisclaimer)
+        returnToDisclaimer = view.findViewById<ImageButton>(R.id.goToInfo)
         returnToDisclaimer.setOnClickListener{
             Navigation.findNavController(view).navigate(R.id.action_menuFragment_to_infoFragment)}
 
@@ -101,7 +98,7 @@ class MenuFragment : Fragment() {
                 .navigate(R.id.action_menuFragment_to_customizeFragment)
         }
 
-        goToWeather = view.findViewById<Button>(R.id.goToWeather)
+        goToWeather = view.findViewById<ImageButton>(R.id.goToWeather)
         goToWeather.setOnClickListener {
             scaler()
             Navigation.findNavController(view)
@@ -132,15 +129,6 @@ class MenuFragment : Fragment() {
     }
 
 
-    // Function to invoke Toast
-    private fun mDisplayToast(toast: Toast){
-        Thread{
-            for(i in 1..mToastDuration/2000){
-                toast.show()
-                Thread.sleep(2000)
-                toast.cancel()
-            }
-        }.start()
-    }
+
 
 }
