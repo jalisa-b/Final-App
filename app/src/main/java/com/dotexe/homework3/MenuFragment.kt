@@ -34,6 +34,8 @@ class MenuFragment : Fragment() {
     lateinit var spider: ImageButton
     lateinit var wasp: ImageButton
     lateinit var mouse: ImageButton
+    // added pest imagebutton
+    lateinit var pest: ImageButton
 
 
     override fun onCreateView(
@@ -43,6 +45,7 @@ class MenuFragment : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_menu, container, false)
 
+        mouse = view.findViewById(R.id.mouse)
         ant = view.findViewById(R.id.ant)
         bee = view.findViewById(R.id.bee)
         beetle = view.findViewById(R.id.beetle)
@@ -53,14 +56,15 @@ class MenuFragment : Fragment() {
         snake = view.findViewById(R.id.snake)
         spider = view.findViewById(R.id.spider)
         wasp = view.findViewById(R.id.wasp)
-        mouse = view.findViewById(R.id.mouse)
 
-        var  listPestButtons = listOf(ant, bee, beetle, cockroach, cricket, fly, mosquito, snake, spider, wasp,mouse)
+
+        var  listPestButtons = listOf(ant, bee, beetle, cockroach, cricket, fly, mosquito, snake, spider, wasp, mouse)
         for (pest in listPestButtons){
             listClicks.add(0) }
 
         for (i in listPestButtons.indices){
-            var pest = listPestButtons[i]
+            // changed "var pest" to "pest", var declared earlier in code
+            pest = listPestButtons[i]
             var pestString = listPests[i]
             var numClicks = listClicks[i]
             pest.setOnClickListener {
@@ -72,6 +76,7 @@ class MenuFragment : Fragment() {
                     it.setBackgroundResource(R.color.green_light)
                     toast = Toast.makeText(activity,"Turned off $pestString sound.",Toast.LENGTH_SHORT)
                 }
+                rotater(i)
                 toast.show()
 
 
@@ -95,14 +100,14 @@ class MenuFragment : Fragment() {
         // navigating to customize page
         goToCustom = view.findViewById<ImageButton>(R.id.goToCustom)
         goToCustom.setOnClickListener {
-            scaler()
+//            scaler()
             Navigation.findNavController(view)
                 .navigate(R.id.action_menuFragment_to_customizeFragment)
         }
 
         goToWeather = view.findViewById<ImageButton>(R.id.goToWeather)
         goToWeather.setOnClickListener {
-            scaler()
+//            scaler()
             Navigation.findNavController(view)
                 .navigate(R.id.action_menuFragment_to_weatherFragment)
         }
@@ -119,14 +124,18 @@ class MenuFragment : Fragment() {
             }
         })
     }
-
-    private fun scaler() {
-        val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X,2f)
-        val scaleY = PropertyValuesHolder.ofFloat(View.SCALE_Y,2f)
-        val animator = ObjectAnimator.ofPropertyValuesHolder(goToCustom,scaleX,scaleY)
-        animator.repeatCount = 1
-        animator.repeatMode = ObjectAnimator.REVERSE
-        animator.disableViewDuringAnimation(goToCustom)
+//
+    private fun rotater(index: Int) {
+        // ObjectAnimator lets you do different kinds of animation
+        // you could replace rotateButton with something else to animate it
+        // doing a full circle rotation
+        // you want 0 as the ending value
+        var  listPestButtons = listOf(ant, bee, beetle, cockroach, cricket, fly, mosquito, snake, spider, wasp, mouse)
+        var rotate_pest = listPestButtons[index]
+        val animator = ObjectAnimator.ofFloat(rotate_pest, View.ROTATION, -360f,0f)
+        //default duration is 360millisecond
+        animator.duration = 1000;
+        animator.disableViewDuringAnimation(rotate_pest)
         animator.start()
     }
 
