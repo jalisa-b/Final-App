@@ -21,23 +21,9 @@ class InfoFragment : Fragment() {
         // Inflate the layout for this fragment and store in view
         val view = inflater.inflate(R.layout.fragment_info, container, false)
 
-        // getting reference of ExpandableTextView
-        // getting reference of ExpandableTextView
-        //expandableText= view.findViewById<ExpandableTextView>(R.id.answer1).findViewById(R.id.answer1) as ExpandableTextView
-
-// calling setText on the ExpandableTextView so that
-// text content will be displayed to the user
-
-// calling setText on the ExpandableTextView so that
-// text content will be displayed to the user
-        //expTv.setText(getString(R.string.expandable_text))
-
-
-        //val disclaimerText = view.findViewById<TextView>(R.id.disclaimer)
         backButton = view.findViewById<ImageButton>(R.id.backButton)
         backButton.setOnClickListener{
-
-            scaler()
+            rotater()
             Navigation.findNavController(view).navigate(R.id.action_infoFragment_to_menuFragment)
         }
 
@@ -65,4 +51,17 @@ class InfoFragment : Fragment() {
         animator.disableViewDuringAnimation(backButton)
         animator.start()
     }
+
+    private fun rotater() {
+        // ObjectAnimator lets you do different kinds of animation
+        // you could replace rotateButton with something else to animate it
+        // doing a full circle rotation
+        // you want 0 as the ending value
+        val animator = ObjectAnimator.ofFloat(backButton, View.ROTATION, -360f,0f)
+        //default duration is 360millisecond
+        animator.duration = 1000;
+        animator.disableViewDuringAnimation(backButton)
+        animator.start()
+    }
+
 }
