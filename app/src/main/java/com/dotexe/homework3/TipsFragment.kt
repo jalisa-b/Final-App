@@ -18,7 +18,7 @@ class TipsFragment : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_tips, container, false)
 
-        val returnToMain = view.findViewById<ImageButton>(R.id.returnToMain)
+        val returnToMain = view.findViewById<ImageButton>(R.id.backButton)
         returnToMain.setOnClickListener{
             Navigation.findNavController(view).navigate(R.id.action_tipsFragment_to_menuFragment)}
 
