@@ -4,6 +4,7 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -57,6 +58,8 @@ class MenuFragment : Fragment() {
         spider = view.findViewById(R.id.spider)
         wasp = view.findViewById(R.id.wasp)
 
+        var mediaPlayer = MediaPlayer.create(context, R.raw.testsound)
+
 
         var  listPestButtons = listOf(ant, bee, beetle, cockroach, cricket, fly, mosquito, snake, spider, wasp, mouse)
         for (pest in listPestButtons){
@@ -69,15 +72,24 @@ class MenuFragment : Fragment() {
             var numClicks = listClicks[i]
             pest.setOnClickListener {
                 val toast: Toast
+                var sound = false
                 if (numClicks %2 == 0 ) {
                     it.setBackgroundResource(R.color.green_select)
                     toast = Toast.makeText(activity,"Playing sound to repel $pestString!",Toast.LENGTH_SHORT)
+                    sound = true
                 } else {
                     it.setBackgroundResource(R.color.green_light)
                     toast = Toast.makeText(activity,"Turned off $pestString sound.",Toast.LENGTH_SHORT)
+                    sound = false
                 }
                 rotater(i)
                 toast.show()
+
+                if (sound){
+                    mediaPlayer.start()
+                } else{
+                    mediaPlayer.pause()
+                }
 
 
                 numClicks += 1
@@ -90,12 +102,14 @@ class MenuFragment : Fragment() {
         // navigating to tips page
         tipsButton = view.findViewById<ImageButton>(R.id.tipsButton)
         tipsButton.setOnClickListener{
-            Navigation.findNavController(view).navigate(R.id.action_menuFragment_to_tipsFragment)}
+            Navigation.findNavController(view).navigate(R.id.action_menuFragment_to_tipsFragment)
+            mediaPlayer.stop()}
 
         // navigating to disclaimer page
         returnToDisclaimer = view.findViewById<ImageButton>(R.id.goToInfo)
         returnToDisclaimer.setOnClickListener{
-            Navigation.findNavController(view).navigate(R.id.action_menuFragment_to_infoFragment)}
+            Navigation.findNavController(view).navigate(R.id.action_menuFragment_to_infoFragment)
+            mediaPlayer.stop()}
 
         // navigating to customize page
         goToCustom = view.findViewById<ImageButton>(R.id.goToCustom)
@@ -103,6 +117,7 @@ class MenuFragment : Fragment() {
 //            scaler()
             Navigation.findNavController(view)
                 .navigate(R.id.action_menuFragment_to_customizeFragment)
+            mediaPlayer.stop()
         }
 
         goToWeather = view.findViewById<ImageButton>(R.id.goToWeather)
@@ -110,6 +125,7 @@ class MenuFragment : Fragment() {
 //            scaler()
             Navigation.findNavController(view)
                 .navigate(R.id.action_menuFragment_to_weatherFragment)
+            mediaPlayer.stop()
         }
         return view
     }
