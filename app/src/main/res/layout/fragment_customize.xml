@@ -38,11 +38,11 @@
         android:id="@+id/custom"
         android:layout_width="296dp"
         android:layout_height="181dp"
-        android:fontFamily="@font/average_sans"
+        android:fontFamily="@font/allerta"
         android:text="@string/custom"
         android:textAlignment="center"
         android:textColor="@color/purple_500"
-        android:textSize="25sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/toggleButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -66,18 +66,17 @@
 
     <com.google.android.material.slider.Slider
         android:id="@+id/slider"
-        android:layout_width="200dp"
-        android:layout_height="32dp"
+        android:layout_width="295dp"
+        android:layout_height="49dp"
         android:layout_marginTop="32dp"
-        android:stepSize="20"
-        android:valueFrom="80"
-        android:valueTo="200"
+        android:stepSize="10"
+        android:valueFrom="10"
+        android:valueTo="240"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toggleButton"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.302"
         app:thumbColor="@color/purple_500"
         app:tickColorInactive="@color/purple_200"
         app:trackColorActive="@color/purple_500"
@@ -85,24 +84,106 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="57dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="32dp"
-        android:src="@drawable/mouse"
-        app:layout_constraintEnd_toStartOf="@+id/slider"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_width="44dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/cat"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toggleButton" />
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="57dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="32dp"
-        android:src="@drawable/cricket"
+        android:layout_width="49dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="48dp"
+        android:src="@drawable/bat"
+        app:layout_constraintBottom_toTopOf="@+id/slider"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/slider"
         app:layout_constraintTop_toBottomOf="@+id/toggleButton" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="56dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="104dp"
+        android:src="@drawable/mouse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slider"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="60dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/cricket"
+        app:layout_constraintBottom_toTopOf="@+id/slider"
+        app:layout_constraintEnd_toStartOf="@+id/imageView6"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView9"
+        app:layout_constraintTop_toBottomOf="@+id/toggleButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="54dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="38dp"
+        android:src="@drawable/spider"
+        app:layout_constraintBottom_toTopOf="@+id/slider"
+        app:layout_constraintStart_toStartOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/toggleButton"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="66dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="35dp"
+        android:src="@drawable/beetle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="@+id/slider"
+        app:layout_constraintVertical_bias="0.006" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="27dp"
+        android:layout_height="49dp"
+        android:src="@drawable/cockroach"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/slider"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="65dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="152dp"
+        android:src="@drawable/mosquito"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView10" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="64dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="216dp"
+        android:src="@drawable/snake"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView5"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toggleButton"
+        app:layout_constraintVertical_bias="0.957" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
