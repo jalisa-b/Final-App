@@ -3,7 +3,6 @@ package com.dotexe.homework3
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ObjectAnimator
-import android.animation.PropertyValuesHolder
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
