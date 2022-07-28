@@ -87,8 +87,6 @@ class WeatherFragment : Fragment(), LocationListener {
         "WY" to listOf<String>("spider"),
         )
 
-
-
     //api id for url
     var api_id1 = "eb1fbbe5a02240e7a29493eede818b43"
     private var requestQueue: RequestQueue? = null
@@ -111,20 +109,15 @@ class WeatherFragment : Fragment(), LocationListener {
         //loading spinner gif on create
         Glide.with(view.context).load(R.drawable.spinner).into(loadingView)
 
-
         requestQueue = Volley.newRequestQueue(view.context)
         locationManager = view.context.getSystemService(Context.LOCATION_SERVICE) as LocationManager
         if ((ContextCompat.checkSelfPermission(view.context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)) {
             ActivityCompat.requestPermissions(requireActivity(), arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), locationPermissionCode)
         }
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 5f, this)
-
             return view
     }
-
-
     override fun onLocationChanged(location: Location) {
-        //tempText.text = "Latitude: " + location.latitude + " , Longitude: " + location.longitude
         getTemperature(location.latitude, location.longitude)
     }
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
@@ -136,16 +129,13 @@ class WeatherFragment : Fragment(), LocationListener {
             else {
                 Toast.makeText(context, "Permission Denied", Toast.LENGTH_SHORT).show()
             }
-
         }
     }
-
     fun getSuggestion(statecode: String) {
         var message = "Based on your location, we recommend selecting to repel the "
         for ((state, list) in commonPestDict) {
             if (state == statecode) {
                 for (pest in list) {
-                    Log.e("pest", pest)
                     if (list.indexOf(pest) == list.size-1){
                         message = message.plus(" and ").plus(pest).plus(".")
                     } else {
@@ -168,13 +158,11 @@ class WeatherFragment : Fragment(), LocationListener {
                     val jsonArray = response.getJSONArray("data")
             Log.e("lat","parsing")
                     val info = jsonArray.getJSONObject(0)
-            Log.e("lat", info.toString())
                     var temp = info.getDouble("temp")
                     val cityname = info.getString("city_name")
                     val statecode = info.getString("state_code")
                     val countrycode = info.getString("country_code")
                     val description = info.getJSONObject("weather").getString("description")
-
             //removing loading gif from view
             loadingView.setImageDrawable(null)
             //setting banner into view
@@ -183,27 +171,21 @@ class WeatherFragment : Fragment(), LocationListener {
             if (countrycode.equals("US")){
                 var tempString = (temp*(1.8) + 32).toString()
                 if (tempString.length>4){
-                    tempString = tempString.substring(0,4)
-                }
+                    tempString = tempString.substring(0,4) }
                 getSuggestion(statecode)
                 tempText.text= "$tempString\u2109"
-            } else{
-                var tempString = temp.toString()
-                if (tempString.length>4){
-                    tempString = tempString.substring(0,4)
-                }
+                } else{
+                    var tempString = temp.toString()
+                    if (tempString.length>4){
+                    tempString = tempString.substring(0,4) }
                 tempText.text= "$tempString\u2103"
                 suggestionText.text =  "We are sorry. our recommendation service does not work in your country."
             }
             cityText.text = "$cityname, $statecode, $countrycode"
             descriptionText.text = "$description"
-
-
         } catch (e: JSONException) {
-            e.printStackTrace()
-        }
+            e.printStackTrace() }
         }, { error -> error.printStackTrace() })
         requestQueue?.add(request)
     }
-
 }
